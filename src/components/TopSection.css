@@ -1,0 +1,13 @@
+.add-and-filter-div{
+    width: 345px;
+    margin: 0px auto;
+}
+
+.add-and-filter-div > div{
+    margin-top: 10px;
+    display: flex;
+}
+
+#filter-table-tags-section{
+    width: fit-content;
+}
