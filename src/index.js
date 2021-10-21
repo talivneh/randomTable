@@ -112,38 +112,38 @@ addBtn.onclick = function () {
             body: JSON.stringify({ name: name })
         })
             .then(response => response.json())
-            .then(data => insertRowIntoTable(data['data']));
+            .then(data => refreshTable());
     }
 }
 
-function insertRowIntoTable(data) {
+// function insertRowIntoTable(data) {
 
-    const table = document.querySelector("table tbody");
-    const isTableData = table.querySelector(".no-data");
+//     const table = document.querySelector("table tbody");
+//     const isTableData = table.querySelector(".no-data");
 
-    let tableHTML = '<tr>';
+//     let tableHTML = '<tr>';
 
-    for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            if (key === "dateAdded") {
-                data[key] = new Date(data[key]).toLocaleDateString();
-            }
-        }
-        tableHTML += `<td>${data[key]}</td>`
-    }
+//     for (var key in data) {
+//         if (data.hasOwnProperty(key)) {
+//             if (key === "dateAdded") {
+//                 data[key] = new Date(data[key]).toLocaleDateString();
+//             }
+//         }
+//         tableHTML += `<td>${data[key]}</td>`
+//     }
 
-    tableHTML += `<td><button class="delete-row-btn" data-id=${data.id}>Delete</button></td>`;
-    tableHTML += `<td><button class="edit-row-btn" data-id=${data.id}>Edit</button></td>`;
-    tableHTML += '</tr>';
+//     tableHTML += `<td><button class="delete-row-btn" data-id=${data.id}>Delete</button></td>`;
+//     tableHTML += `<td><button class="edit-row-btn" data-id=${data.id}>Edit</button></td>`;
+//     tableHTML += '</tr>';
 
-    if (isTableData) {
-        table.innerHTML = tableHTML;
-    }
-    else {
-        const newRow = table.insertRow();
-        newRow.innerHTML = tableHTML;
-    }
-}
+//     if (isTableData) {
+//         table.innerHTML = tableHTML;
+//     }
+//     else {
+//         const newRow = table.insertRow();
+//         newRow.innerHTML = tableHTML;
+//     }
+// }
 
 const filterBtn = document.querySelector("#filter-btn");
 
